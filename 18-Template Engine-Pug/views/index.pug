@@ -1,0 +1,17 @@
+extends  layouts/main-layout.pug
+
+include mixin/createProduct.pug
+
+block content 
+
+  include includes/slider.pug
+
+  div.row(style="margin-top: 50px;")
+    if products.length > 0
+      each product in products  
+        +createProduct(product)
+
+    else 
+      h3 No Products 
+
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossorigin="anonymous")
